@@ -1,0 +1,15 @@
+  <p>
+    <strong>Title:</strong>
+    <%= task.task %>
+  </p>
+ 
+  <p>
+    <strong>Deadline:</strong>
+    <%= task.date %>
+  </p>
+
+  <p>
+    <%= link_to 'Destroy Task', [task.project, task],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+  </p>

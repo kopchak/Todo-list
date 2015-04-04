@@ -1,0 +1,13 @@
+<p>
+  <strong>Title:</strong>
+  <%= @project.title %>
+</p>
+
+<h2>Tasks</h2>
+<%= render @project.tasks %>
+
+<h2>Add a task:</h2>
+<%= render 'tasks/form' %>
+
+<%= link_to 'Edit Project', edit_project_path(@project) %>
+<%= link_to 'Back to Projects', projects_path %>
