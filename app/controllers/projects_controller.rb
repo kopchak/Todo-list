@@ -4,16 +4,14 @@ class ProjectsController < ApplicationController
 
 	def index
 		@projects = Project.all
+		@project = Project.new
 	end
 
 	def create
 		@project = Project.new(project_params)
 
-		if @project.save
-			redirect_to @project
-		else
-			render 'new'
-		end
+		@project.save
+		redirect_to projects_path		
 	end
 
 	def update
