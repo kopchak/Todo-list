@@ -1,5 +1,4 @@
-<body>
-  <div class="header">
+<div class="header">
       <h1>SIMPLE TODO LISTS</h1>
       <h2>FROM RUBY GARAGE</h2>
       <% @projects.each do |project| %>
@@ -15,8 +14,16 @@
           </div><!--end header top-->
           <div class="header_bot">
             <%= image_tag "inp_img.gif" %>
-            <input type="text" size="50" placeholder="Start typing here to create a task...">
-            <button>Add Task</button>
+            <!-- <input type="text" size="50" placeholder="Start typing here to create a task...">
+            <button>Add Task</button> -->
+            <%= form_for [project, @task] do |f| %>
+            <p>
+              <%= f.text_field :task %>
+            </p>
+            <p>
+              <%= f.submit %>
+            </p>
+            <% end %>
           </div><!--end header bot-->
           <ul class="task_block">
             <% project.tasks.each do |task| %>
@@ -53,5 +60,4 @@
           <% end %>
         </button>
       </div>
-  </div><!--end header-->
-</body><!--end body-->
+</div><!--end header-->

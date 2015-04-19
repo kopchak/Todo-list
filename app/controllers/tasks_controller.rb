@@ -2,14 +2,10 @@ class TasksController < ApplicationController
 
 	http_basic_authenticate_with name: "den", password: "secret", only: :destroy
 
-	# def index
-	# 	@tasks = Task.all
-	# end
-
 	def create
 		@project = Project.find(params[:project_id])
 		@task = @project.tasks.create(task_params)
-		redirect_to project_path(@project)
+		redirect_to projects_path
 	end
 
 	def destroy
