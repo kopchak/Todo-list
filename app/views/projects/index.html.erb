@@ -9,7 +9,7 @@
               <div class="del_edit">
                 <%= image_tag "edit_proj.gif" %>
                 <%= image_tag "1.png" %>
-                <%= link_to (image_tag("del_proj.gif")), project_path(project), method: :delete %> 
+                <%= link_to (image_tag("del_proj.gif")), project_path(project), method: :delete %>
               </div><!--end del_edit-->
           </div><!--end header top-->
           <div class="header_bot">
@@ -17,12 +17,9 @@
             <!-- <input type="text" size="50" placeholder="Start typing here to create a task...">
             <button>Add Task</button> -->
             <%= form_for [project, @task] do |f| %>
-            <p>
-              <%= f.text_field :task %>
-            </p>
-            <p>
+              <%= f.text_field :title, :placeholder => "Start typing here to create a task..." %>
+              <%= f.date_field :date %>
               <%= f.submit %>
-            </p>
             <% end %>
           </div><!--end header bot-->
           <ul class="task_block">
@@ -32,14 +29,14 @@
                   <input type="checkbox">
                 </div><!--end select_task-->
                 <div class="name_task">
-                  <p><%= task.task %></p>
+                  <span><%= task.title %>&nbsp;<strong>deadline: </strong><%= task.date %></span>
                 </div><!--end name_task-->
                 <div class="edit_task">
                   <%= image_tag "leaf.png" %>
                   <%= image_tag "2.png" %>
                   <%= image_tag "edit_task.png" %>
                   <%= image_tag "2.png" %>
-                  <%= image_tag "del_task.png" %>
+                  <%= link_to (image_tag("del_task.png")), [task.project, task], method: :delete %>
                 </div><!--end edit_task-->
               </li><!--end task_line-->
             <% end %>
