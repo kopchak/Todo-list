@@ -5,17 +5,19 @@
         <div class="project">
           <div class="header_top">
             <%= image_tag "notepad.gif" %>
-              <span><%= project.title %></span>
+              <span class="project_name"><%= project.title %></span>
+                <%= form_for project do |f| %>
+                  <%= f.text_field :title, :size => "25" %>
+                  <%= f.submit "OK" %>
+                <% end %>
               <div class="del_edit">
-                <%= image_tag "edit_proj.gif" %>
+                <%= image_tag "edit_proj.gif", class: "edit_proj_img" %>
                 <%= image_tag "1.png" %>
                 <%= link_to (image_tag("del_proj.gif")), project_path(project), method: :delete %>
               </div><!--end del_edit-->
           </div><!--end header top-->
           <div class="header_bot">
             <%= image_tag "inp_img.gif" %>
-            <!-- <input type="text" size="50" placeholder="Start typing here to create a task...">
-            <button>Add Task</button> -->
             <%= form_for [project, @task] do |f| %>
               <%= f.text_field :title, :placeholder => "Start typing here to create a task..." %>
               <%= f.date_field :date %>
@@ -29,12 +31,17 @@
                   <input type="checkbox">
                 </div><!--end select_task-->
                 <div class="name_task">
-                  <span><%= task.title %>&nbsp;<strong>deadline: </strong><%= task.date %></span>
+                  <span class="name_task_span"><%= task.title %>&nbsp;<strong>deadline: </strong><%= task.date %></span>
+                    <%= form_for [task.project, task] do |f| %>
+                      <%= f.text_field :title, :size => "25" %>
+                      <%= f.date_field :date %>
+                      <%= f.submit "OK" %>
+                    <% end %>
                 </div><!--end name_task-->
-                <div class="edit_task">
+                <div class="edit_task_img">
                   <%= image_tag "leaf.png" %>
                   <%= image_tag "2.png" %>
-                  <%= image_tag "edit_task.png" %>
+                  <%= image_tag "edit_task.png", class: "edit_task_img_hover" %>
                   <%= image_tag "2.png" %>
                   <%= link_to (image_tag("del_task.png")), [task.project, task], method: :delete %>
                 </div><!--end edit_task-->

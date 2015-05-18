@@ -61,6 +61,16 @@ li {
 	display: block;
 }
 
+.edit_proj_img {
+	cursor: pointer;
+}
+
+.edit_project {
+	float: left;
+	margin-top: 7px;
+	display: none;
+}
+
 .del_edit {
 	float: right;
 	padding: 5px 5px 0 0;
@@ -106,7 +116,7 @@ li {
 	background-color: #FCFED5;
 }
 
-.task_line:hover .edit_task {
+.task_line:hover .edit_task_img {
 	display: block;
 }
 
@@ -127,7 +137,20 @@ li {
 	margin: 0 0 0 0;
 }
 
+.name_task span {
+	float: left;
+}
+
 .edit_task {
+	float: left;
+	display: none;
+}
+
+.edit_task_img_hover {
+	cursor: pointer;
+}
+
+.edit_task_img {
 	padding: 15px 25px 15px 15px;
 	float: right;
 	display: none;
