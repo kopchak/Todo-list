@@ -1,44 +1,44 @@
-<div class="header">
+<div class="general">
       <h1>SIMPLE TODO LISTS</h1>
       <h2>FROM RUBY GARAGE</h2>
       <% @projects.each do |project| %>
         <div class="project">
-          <div class="header_top">
+          <div class="project_block">
             <%= image_tag "notepad.gif" %>
               <span class="project_name"><%= project.title %></span>
                 <%= form_for project do |f| %>
                   <%= f.text_field :title, :size => "25" %>
                   <%= f.submit "OK" %>
                 <% end %>
-              <div class="del_edit">
-                <%= image_tag "edit_proj.gif", class: "edit_proj_img" %>
+              <div class="project_toolbar">
+                <%= image_tag "edit_proj.gif", class: "edit_project_img" %>
                 <%= image_tag "1.png" %>
                 <%= link_to (image_tag("del_proj.gif")), project_path(project), method: :delete %>
-              </div><!--end del_edit-->
-          </div><!--end header top-->
-          <div class="header_bot">
+              </div>
+          </div>
+          <div class="add_task_block">
             <%= image_tag "inp_img.gif" %>
             <%= form_for [project, @task] do |f| %>
               <%= f.text_field :title, :placeholder => "Start typing here to create a task..." %>
               <%= f.date_field :date %>
               <%= f.submit %>
             <% end %>
-          </div><!--end header bot-->
-          <ul class="task_block">
+          </div>
+          <ul class="task_list">
             <% project.tasks.each do |task| %>
-              <li class="task_line">
-                <div class="select_task">
+              <li class="task_block">
+                <div class="task_status">
                   <input type="checkbox">
-                </div><!--end select_task-->
-                <div class="name_task">
-                  <span class="name_task_span"><%= task.title %>&nbsp;<strong>deadline: </strong><%= task.date %></span>
+                </div>
+                <div class="task_name">
+                  <span class="task_name_span"><%= task.title %>&nbsp;<strong>deadline: </strong><%= task.date %></span>
                     <%= form_for [task.project, task] do |f| %>
                       <%= f.text_field :title, :size => "25" %>
                       <%= f.date_field :date %>
                       <%= f.submit "OK" %>
                     <% end %>
-                </div><!--end name_task-->
-                <div class="edit_task_img">
+                </div>
+                <div class="task_toolbar">
                   <%= image_tag "leaf.png" %>
                   <%= image_tag "2.png" %>
                   <%= image_tag "edit_task.png", class: "edit_task_img_hover" %>
@@ -48,9 +48,9 @@
               </li><!--end task_line-->
             <% end %>
           </ul><!--end task block-->
-        </div><!--end project-->
+        </div>
       <% end %>
-      <div class="add_tl">
+      <div class="add_todo_list">
         <button>
           <%= image_tag "add_but_img.gif" %><span>Add TODO List</span>
           <%= form_for @project do |f| %>
@@ -64,4 +64,4 @@
           <% end %>
         </button>
       </div>
-</div><!--end header-->
+</div>

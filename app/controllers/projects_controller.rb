@@ -22,6 +22,10 @@ class ProjectsController < ApplicationController
 		redirect_to projects_path
 	end
 
+  def sorting
+    
+  end
+
 	def destroy
 		@project = Project.find(params[:id])
 		@project.destroy

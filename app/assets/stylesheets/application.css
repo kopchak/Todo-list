@@ -21,6 +21,15 @@ li {
 	list-style-type: none;
 }
 
+.general {
+	width: 800px;
+	float: left;
+}
+
+.general h1,h2 {
+	text-align: center;
+}
+
 .project {
 	width: 800px;
 	margin: 0 auto;
@@ -28,26 +37,17 @@ li {
 	padding-top: 40px;
 }
 
-.header {
-	width: 800px;
-	float: left;
-}
-
-.header h1,h2 {
-	text-align: center;
-}
-
-.header_top img {
+.project_block img {
 	float: left;
 	padding: 7px;
 }
 
-.header_top span {
+.project_block span {
 	float: left;
 	padding: 7px;
 }
 
-.header_top {
+.project_block {
 	font-size: 16px;
 	margin: 0 0 0 0;
 	padding: 7px;
@@ -57,11 +57,17 @@ li {
 	background-color: #4473AF
 }
 
-.header_top:hover .del_edit {
+.project_block:hover .project_toolbar {
 	display: block;
 }
 
-.edit_proj_img {
+.project_toolbar {
+	float: right;
+	padding: 5px 5px 0 0;
+	display: none;
+}
+
+.edit_project_img {
 	cursor: pointer;
 }
 
@@ -71,61 +77,54 @@ li {
 	display: none;
 }
 
-.del_edit {
-	float: right;
-	padding: 5px 5px 0 0;
-	display: none;
-}
-
-.header_bot {
+.add_task_block {
 	width: 800px;
 	background-color: #CFCFCF;
 	float: left;
 }
 
-.header_bot img {
+.add_task_block img {
 	float: left;
 	margin: 7px 7px 7px 12px;
 }
 
-.header_bot input[type="text"] {
+.add_task_block input[type="text"] {
 	float: left;
 	margin: 8px 8px 8px 7px;
 	width: 250px;
 }
 
-.header_bot input[type="date"] {
+.add_task_block input[type="date"] {
 	float: left;
 	margin: 8px 8px 8px 7px;
 }
 
-.header_bot input[type="submit"] {
-	/*float: right;*/
+.add_task_block input[type="submit"] {
 	background-color: #76AD8E;
 	color: white;
 	margin: 8px;
 }
 
-.task_line {
+.task_block {
 	width: 800px;
 	float: left;
 	border-bottom: 1px solid #E7EBEA;
 }
 
-.task_line:hover {
+.task_block:hover {
 	background-color: #FCFED5;
 }
 
-.task_line:hover .edit_task_img {
+.task_block:hover .task_toolbar {
 	display: block;
 }
 
-.select_task {
+.task_status {
 	padding: 15px;
 	float: left;
 }
 
-.name_task {
+.task_name {
 	width: 615px;
 	border-left: 4px double #EFDADF;
 	padding: 15px;
@@ -133,12 +132,18 @@ li {
 	border-right: 2px solid #E7EBEA;
 }
 
-.name_task p {
+.task_name p {
 	margin: 0 0 0 0;
 }
 
-.name_task span {
+.task_name span {
 	float: left;
+}
+
+.task_toolbar {
+	padding: 15px 25px 15px 15px;
+	float: right;
+	display: none;
 }
 
 .edit_task {
@@ -150,22 +155,16 @@ li {
 	cursor: pointer;
 }
 
-.edit_task_img {
-	padding: 15px 25px 15px 15px;
-	float: right;
-	display: none;
-}
-
-.add_tl {
+.add_todo_list {
 	margin: 30px 330px;
 	float: left;
 }
 
-.add_tl button {
+.add_todo_list button {
 	background-color: #4473AF;
 }
 
-.add_tl span {
+.add_todo_list span {
 	font-weight: bold;
 	color: #DADADA;
 }
