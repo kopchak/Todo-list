@@ -24,3 +24,5 @@ gem 'jbuilder', '~> 2.0'
 gem 'therubyracer'
 
 gem 'jquery-ui-rails'
+
+gem 'pry-byebug'

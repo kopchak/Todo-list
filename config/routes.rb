@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     resources :tasks
   end
 
-   root 'welcome#index'
+   root 'projects#index'
 
 
 end

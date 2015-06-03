@@ -19,18 +19,22 @@ class ProjectsController < ApplicationController
 		@project = Project.find(params[:id])
 		@project.update(project_params)
 
-		redirect_to projects_path
+		render nothing: true
 	end
 
   def sorting
-    
+    tasks = Task.all
+    tasks.each do |t|
+      t.position = params[:task].index(t.id.to_s) + 1
+      t.save
+    end
   end
 
 	def destroy
 		@project = Project.find(params[:id])
 		@project.destroy
 
-		redirect_to projects_path
+		render nothing: true
 	end
 
 	private

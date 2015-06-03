@@ -37,7 +37,7 @@ li {
 	padding-top: 40px;
 }
 
-.project_block img {
+.project_block img, .project_block input[type="image"] {
 	float: left;
 	padding: 7px;
 }
@@ -67,11 +67,7 @@ li {
 	display: none;
 }
 
-.edit_project_img {
-	cursor: pointer;
-}
-
-.edit_project {
+.project_input_text, .project_input_button {
 	float: left;
 	margin-top: 7px;
 	display: none;
@@ -88,21 +84,23 @@ li {
 	margin: 7px 7px 7px 12px;
 }
 
-.add_task_block input[type="text"] {
+.task_input_text {
 	float: left;
 	margin: 8px 8px 8px 7px;
 	width: 250px;
+	height: 18px;
 }
 
-.add_task_block input[type="date"] {
+.task_input_date {
 	float: left;
-	margin: 8px 8px 8px 7px;
+	margin: 8px 8px 8px -7px;
 }
 
-.add_task_block input[type="submit"] {
+.task_input_button {
 	background-color: #76AD8E;
 	color: white;
-	margin: 8px;
+	margin: 8px 8px 8px 0px;
+	height: 24px;
 }
 
 .task_block {
@@ -132,8 +130,8 @@ li {
 	border-right: 2px solid #E7EBEA;
 }
 
-.task_name p {
-	margin: 0 0 0 0;
+.task_date_span {
+	margin-left: 10px;
 }
 
 .task_name span {
@@ -146,13 +144,21 @@ li {
 	display: none;
 }
 
-.edit_task {
+.task_edit_text, .task_edit_date, .task_edit_button {
 	float: left;
 	display: none;
 }
 
-.edit_task_img_hover {
-	cursor: pointer;
+.task_edit_text {
+	height: 18px;
+}
+
+.task_edit_date {
+	margin: 0px 8px 0px 1px;
+}
+
+.task_edit_button {
+	height: 24px;
 }
 
 .add_todo_list {
