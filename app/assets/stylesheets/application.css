@@ -24,6 +24,7 @@ li {
 .general {
 	width: 800px;
 	float: left;
+	position: relative;
 }
 
 .general h1,h2 {
@@ -161,16 +162,21 @@ li {
 	height: 24px;
 }
 
-.add_todo_list {
-	margin: 30px 330px;
+.create_todolist {
+	margin: 35px 344px 25px 344px;
+	height: 30px;
 	float: left;
-}
-
-.add_todo_list button {
 	background-color: #4473AF;
-}
-
-.add_todo_list span {
 	font-weight: bold;
 	color: #DADADA;
+	position: absolute;
+	bottom: -90px;
+}
+
+.add_todolist {
+	float: left;
+	margin: 0px 235px 30px 289px;
+	position: absolute;
+	bottom: -130px;
+	display: none;
 }

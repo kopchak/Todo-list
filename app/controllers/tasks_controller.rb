@@ -7,10 +7,9 @@ class TasksController < ApplicationController
 		@project = Project.find(params[:project_id])
 		@task = @project.tasks.create(task_params)
 		#binding.pry
-   respond_to do |format|
-   format.json { render :json => @task.id }
-  end
-
+    respond_to do |format|
+     format.json { render :json => @task.id }
+    end
 	end
 
 	def update

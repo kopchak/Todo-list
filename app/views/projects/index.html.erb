@@ -44,18 +44,9 @@
           </ul>
         </div>
       <% end %>
-      <div class="add_todo_list">
-        <button>
-          <%= image_tag "add_but_img.gif" %><span>Add TODO List</span>
-          <%= form_for @project do |f| %>
-            <p>
-              <%= f.label :title %><br>
-              <%= f.text_field :title %>
-            </p>
-            <p>
-              <%= f.submit %>
-            </p>
-          <% end %>
-        </button>
+      <input type ="button" src="/assets/add_but_img.gif" class ="create_todolist" value = "Add TODO List">
+      <div class="add_todolist">
+        <input type="text" class="add_todolist_text" placeholder="Write a new name for todo list" size="25">
+        <input type="button" class="add_todolist_button" value="OK">
       </div>
 </div>
