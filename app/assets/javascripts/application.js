@@ -13,7 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.sortable
 //= require_tree .
+//= require jquery-ui
+
 $(document).ready(function(){
   $('.general').on('click','.edit_project_img', function() {
     $(this).parents(".project").find(".project_name").hide();
@@ -164,6 +167,16 @@ $(document).ready(function(){
     $(this).parent(".add_todolist").find(".add_todolist_text").val('');
     $(this).parent(".add_todolist").hide();
     return false;
-  });  
+  });
+
+  $(".task_list").sortable({
+    axis: 'y',
+    items: 'li',
+    cursor: 'move',
+    update: function() {
+      var path = $(this).parents(".project").find(".task_list").attr("url");
+      console.log(path);
+    }
+  });
 
 });

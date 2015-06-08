@@ -140,9 +140,14 @@ li {
 }
 
 .task_toolbar {
-	padding: 15px 25px 15px 15px;
 	float: right;
+	margin-right: 19px;
 	display: none;
+}
+
+.task_toolbar img, .task_toolbar input {
+	float: left;
+	margin: 17px 2px;
 }
 
 .task_edit_text, .task_edit_date, .task_edit_button {

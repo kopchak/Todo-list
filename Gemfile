@@ -26,3 +26,4 @@ gem 'therubyracer'
 gem 'jquery-ui-rails'
 
 gem 'pry-byebug'
+gem 'jquery-sortable-rails'

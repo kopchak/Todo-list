@@ -5,6 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-5.times { |i| p = Project.create(title: "title#{i}")
-	5.times { |j| Task.create(title: "title#{j}", project_id: p.id) }
+3.times { |i| p = Project.create(title: "title#{i}")
+	3.times { |j| Task.create(title: "title#{j}", project_id: p.id) }
 }
