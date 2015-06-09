@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
 
-	http_basic_authenticate_with name: "den", password: "secret", only: :destroy
+	respond_to :html, :js
 
 	def create
 		@project = Project.find(params[:project_id])
@@ -20,10 +20,11 @@ class TasksController < ApplicationController
 	end
 
 	def sorting
-    tasks = Task.all
-    tasks.each do |t|
-      t.position = params[:task].index(t.id.to_s) + 1
-      t.save
+		#binding.pry
+		@project = Project.find(params[:project_id])
+    @project.tasks.each do | task |
+      task.position = params[:task].index(task.id.to_s)+1
+      task.save
     end
     render nothing: true
   end
@@ -38,6 +39,6 @@ class TasksController < ApplicationController
 
 	private
 		def task_params
-			params.require(:task).permit(:title, :date)
+			params.require(:task).permit(:title, :date, :status)
 		end
 end

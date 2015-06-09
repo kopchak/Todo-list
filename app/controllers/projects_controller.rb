@@ -1,7 +1,5 @@
 class ProjectsController < ApplicationController
 
-	http_basic_authenticate_with name: "den", password: "secret", except: [:index, :show]
-
 	def index
 		@projects = Project.order("id").all
 		@project = Project.new

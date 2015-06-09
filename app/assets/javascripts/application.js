@@ -34,7 +34,6 @@ $(document).ready(function(){
     var id = $(this).parents(".project").attr("id");
     var title = $(this).parents(".project_block").find(".project_input_text").val();
     var path = "projects/" + id;
-    console.log(id);
    $.ajax({
       type: "patch",
       url: path,
@@ -48,7 +47,6 @@ $(document).ready(function(){
 
   $('.general').on('click','.delete_project_img', function() {
     var id = $(this).parents(".project").attr("id");
-    console.log(id);
     var path = "projects/" + id;
    $.ajax({
       type: "delete",
@@ -57,6 +55,21 @@ $(document).ready(function(){
     });
    $(this).parents(".project").remove();
    return false;
+  });
+
+  $('.general').on('change','.checkbox', function() {
+    var idProject = $(this).parents(".project").attr("id");
+    var idTask = $(this).parents(".task_block").attr("id");
+    var status = $(this).parents(".task_block").find(".checkbox").prop("checked");
+    var path = "projects/" + idProject + "/tasks/" + idTask;
+    $.ajax({
+      type: "put",
+      url: path,
+      data: {"task[status]":status}
+    });
+    console.log(status);
+    // $(this).parents(".task_block").find(".checkbox").attr("checked");
+    return false;
   });
 
   $('.general').on('click','.task_edit_button', function() {
@@ -174,9 +187,16 @@ $(document).ready(function(){
     items: 'li',
     cursor: 'move',
     update: function() {
-      var path = $(this).parents(".project").find(".task_list").attr("url");
-      console.log(path);
+      var idProject = $(this).parents(".project").attr("id");
+      var tasks = $(this).sortable("toArray").toString();
+      var path = '/projects/'+ idProject +'/tasks/sorting'
+      $.ajax({
+      type: "post",
+      data: {"task":tasks},
+      url: path
+      });
     }
   });
+  
 
 });

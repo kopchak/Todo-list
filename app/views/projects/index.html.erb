@@ -24,7 +24,7 @@
             <% project.tasks.each do |task| %>
               <li class="task_block" id="<%= task.id %>">
                 <div class="task_status">
-                  <input type="checkbox">
+                  <input type="checkbox" class="checkbox" >
                 </div>
                 <div class="task_name">
                   <span class="task_name_span"><%= task.title %></span><span class="task_date_span">deadline: <%= task.date %></span>

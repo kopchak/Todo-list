@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'therubyracer'
 
 gem 'jquery-ui-rails'
-
+gem 'acts_as_list'
 gem 'pry-byebug'
 gem 'jquery-sortable-rails'
+gem 'responders', '~> 2.0'
