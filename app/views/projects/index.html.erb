@@ -1,4 +1,5 @@
 <div class="general">
+      <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
       <h1>SIMPLE TODO LISTS</h1>
       <h2>FROM RUBY GARAGE</h2>
       <% @projects.each do |project| %>

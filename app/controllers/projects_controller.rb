@@ -1,13 +1,13 @@
 class ProjectsController < ApplicationController
 
 	def index
-		@projects = Project.order("id").all
+		@projects = current_user.projects
 		@project = Project.new
 		@task = Task.new
 	end
 
 	def create
-		@project = Project.new(project_params)
+		@project = current_user.projects.new(project_params)
 		@project.save
 		respond_to do |format|
      format.json { render :json => @project.id }
@@ -15,14 +15,14 @@ class ProjectsController < ApplicationController
 	end
 
 	def update
-		@project = Project.find(params[:id])
+		@project = current_user.projects.find(params[:id])
 		@project.update(project_params)
 
 		render nothing: true
 	end
 
 	def destroy
-		@project = Project.find(params[:id])
+		@project = current_user.projects.find(params[:id])
 		@project.destroy
 
 		render nothing: true

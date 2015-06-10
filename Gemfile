@@ -22,7 +22,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'therubyracer'
-
+gem 'devise'
 gem 'jquery-ui-rails'
 gem 'acts_as_list'
 gem 'pry-byebug'

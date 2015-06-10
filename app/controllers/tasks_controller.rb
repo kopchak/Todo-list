@@ -3,7 +3,7 @@ class TasksController < ApplicationController
 	respond_to :html, :js
 
 	def create
-		@project = Project.find(params[:project_id])
+		@project = current_user.projects.find(params[:project_id])
 		@task = @project.tasks.create(task_params)
 		#binding.pry
     respond_to do |format|
@@ -13,7 +13,7 @@ class TasksController < ApplicationController
 
 	def update
 		#binding.pry
-		@project = Project.find(params[:project_id])
+		@project = current_user.projects.find(params[:project_id])
 		@task = @project.tasks.find(params[:id])
 		@task.update(task_params)
 		render nothing: true
@@ -21,7 +21,7 @@ class TasksController < ApplicationController
 
 	def sorting
 		#binding.pry
-		@project = Project.find(params[:project_id])
+		@project = current_user.projects.find(params[:project_id])
     @project.tasks.each do | task |
       task.position = params[:task].index(task.id.to_s)+1
       task.save
@@ -31,7 +31,7 @@ class TasksController < ApplicationController
 
 	def destroy
 		#binding.pry
-		@project = Project.find(params[:project_id])
+		@project = current_user.projects.find(params[:project_id])
 		@task = @project.tasks.find(params[:id])
 		@task.destroy
 		render nothing: true
