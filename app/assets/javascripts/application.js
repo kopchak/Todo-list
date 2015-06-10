@@ -119,7 +119,7 @@ $(document).ready(function(){
     $(this).parents('.project').children("ul").append(
       "<li class='task_block' id="+ idTask +">" +
         "<div class='task_status'>" +
-          "<input type='checkbox'>" +
+          "<input type='checkbox' name='' id='' value='' class='checkbox'>" +
         "</div>" +
         "<div class='task_name'>" +
           "<span class='task_name_span'>"+ title +"</span><span class='task_date_span'>deadline: "+ date +"</span>" +

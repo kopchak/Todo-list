@@ -7,7 +7,7 @@ class TasksController < ApplicationController
 		@task = @project.tasks.create(task_params)
 		#binding.pry
     respond_to do |format|
-     format.json { render :json => @task.id }
+     format.json {render :json => @task.id}
     end
 	end
 
