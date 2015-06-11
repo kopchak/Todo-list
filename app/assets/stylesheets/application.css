@@ -27,8 +27,14 @@ li {
 	position: relative;
 }
 
-.general h1,h2 {
+.general h1,h2,h5 {
 	text-align: center;
+}
+
+h5 {
+	margin: 15px 359px;
+	position: absolute;
+	bottom: -150px;
 }
 
 .project {
@@ -168,20 +174,57 @@ li {
 }
 
 .create_todolist {
-	margin: 35px 344px 25px 344px;
+	margin: 0px 344px 0px 344px;
 	height: 30px;
-	float: left;
 	background-color: #4473AF;
 	font-weight: bold;
 	color: #DADADA;
 	position: absolute;
-	bottom: -90px;
+	bottom: -65px;
 }
 
 .add_todolist {
-	float: left;
-	margin: 0px 235px 30px 289px;
+	margin: 0px 235px 30px 285px;
 	position: absolute;
-	bottom: -130px;
+	bottom: -125px;
 	display: none;
+}
+
+.device_general {
+	width: 380px;
+	margin: 140px auto;
+	background: #87CEFA;
+	padding: 25px;
+}
+
+.device_password_general {
+	width: 380px;
+	margin: 140px auto;
+	background: #87CEFA;
+	padding: 25px;
+}
+
+.field_email, .field_password, .field_remember, .field_email_passwrd {
+	font-size: 25px;
+	padding-bottom: 10px;
+}
+
+.field_email input, .field_password input, .field_email_passwrd input {
+	font-size: 20px;
+}
+
+.field_email label {
+	margin-left: 47px;
+}
+
+.field_email label, .field_password label {
+	margin-right: 5px;
+}
+
+.actions {
+	margin: 0px 0px 15px 0px;
+}
+
+.actions input {
+	font-size: 23px;
 }
