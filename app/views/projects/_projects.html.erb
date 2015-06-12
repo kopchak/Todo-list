@@ -1,0 +1,24 @@
+<% @projects.each do |project| %>
+  <div class="project" id="<%= project.id %>">
+    <div class="project_block">
+      <image src="/assets/notepad.gif">
+      <span class="project_name"><%= project.title %></span>
+      <input type="text" class="project_input_text" placeholder="Set a new name for <%= project.title %>" size="30">
+      <input type ="button" class ="project_input_button" value = "OK">
+      <div class="project_toolbar">
+        <input type="image" class="edit_project_img" src="/assets/edit_proj.gif">
+        <image src="/assets/1.png">
+        <%= link_to image_tag("del_proj.gif"), project_path(project), remote: true, class: 'delete_project_img', method: :delete %>
+      </div>
+    </div>
+    <div class="add_task_block">
+      <image src="/assets/inp_img.gif">
+      <input type="text" class="task_input_text" placeholder="Start typing here to create a task..." size="25">
+      <input type="date" class="task_input_date">
+      <input type ="button" class ="task_input_button" value = "OK">
+    </div>
+    <ul class="task_list">
+      <%= render 'tasks/tasks', project: project %>
+    </ul>
+  </div>
+<% end %>

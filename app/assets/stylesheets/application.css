@@ -183,8 +183,8 @@ h5 {
 	bottom: -65px;
 }
 
-.add_todolist {
-	margin: 0px 235px 30px 285px;
+.new_project {
+	margin: 0px 235px 30px 300px;
 	position: absolute;
 	bottom: -125px;
 	display: none;

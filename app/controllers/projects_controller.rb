@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  respond_to :html, :js
 
 	def index
 		@projects = current_user.projects
@@ -7,11 +8,9 @@ class ProjectsController < ApplicationController
 	end
 
 	def create
+		@projects = current_user.projects
 		@project = current_user.projects.new(project_params)
 		@project.save
-		respond_to do |format|
-     format.json { render :json => @project.id }
-    end
 	end
 
 	def update
@@ -24,8 +23,6 @@ class ProjectsController < ApplicationController
 	def destroy
 		@project = current_user.projects.find(params[:id])
 		@project.destroy
-
-		render nothing: true
 	end
 
 	private

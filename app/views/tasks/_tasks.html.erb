@@ -1,0 +1,20 @@
+<% project.tasks.each do |task| %>
+  <li class="task_block" id="<%= task.id %>">
+    <div class="task_status">
+      <%= check_box_tag "", "", task.status, class: "checkbox" %>
+    </div>
+    <div class="task_name">
+      <span class="task_name_span"><%= task.title %></span><span class="task_date_span">deadline: <%= task.date %></span>
+      <input type="text" class="task_edit_text" placeholder="Set a new name for <%= task.title %>" size="30">
+      <input type="date" class="task_edit_date">
+      <input type ="button" class ="task_edit_button" value = "OK">
+    </div>
+    <div class="task_toolbar">
+      <input type="image" src="/assets/leaf.png">
+      <image src="/assets/2.png">
+      <input type="image" class="edit_task_img_hover" src="/assets/edit_task.png">
+      <image src="/assets/2.png">
+      <input type="image" class="delete_task_img_hover" src="/assets/del_task.png">
+    </div>
+  </li>
+<% end %>
