@@ -3,8 +3,10 @@
     <div class="project_block">
       <image src="/assets/notepad.gif">
       <span class="project_name"><%= project.title %></span>
-      <input type="text" class="project_input_text" placeholder="Set a new name for <%= project.title %>" size="30">
-      <input type ="button" class ="project_input_button" value = "OK">
+      <%= form_for project, remote: true do |f| %>
+      <%= f.text_field :title, class: "project_input_text", placeholder: "Set a new name ...", size: "30" %>
+      <%= f.submit "OK", class: "project_input_button" %>
+      <% end %>
       <div class="project_toolbar">
         <input type="image" class="edit_project_img" src="/assets/edit_proj.gif">
         <image src="/assets/1.png">
@@ -13,9 +15,11 @@
     </div>
     <div class="add_task_block">
       <image src="/assets/inp_img.gif">
-      <input type="text" class="task_input_text" placeholder="Start typing here to create a task..." size="25">
-      <input type="date" class="task_input_date">
-      <input type ="button" class ="task_input_button" value = "OK">
+      <%= form_for [project, @task], remote: true do |f| %>
+      <%= f.text_field :title, class: "task_input_text", size:"25" %>
+      <%= f.date_field :date, class: "task_input_date" %>
+      <%= f.submit "Add Task", class: "task_input_button" %>
+      <% end %>
     </div>
     <ul class="task_list">
       <%= render 'tasks/tasks', project: project %>

@@ -8,16 +8,19 @@ class ProjectsController < ApplicationController
 	end
 
 	def create
-		@projects = current_user.projects
+		#binding.pry
 		@project = current_user.projects.new(project_params)
+		@projects = current_user.projects
+		@task = Task.new
 		@project.save
 	end
 
 	def update
 		@project = current_user.projects.find(params[:id])
+		@projects = current_user.projects
 		@project.update(project_params)
-
-		render nothing: true
+		@task = @project.tasks.new
+		@project.save
 	end
 
 	def destroy

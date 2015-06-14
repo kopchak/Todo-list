@@ -1,14 +1,9 @@
 class TasksController < ApplicationController
-
 	respond_to :html, :js
 
 	def create
 		@project = current_user.projects.find(params[:project_id])
 		@task = @project.tasks.create(task_params)
-		#binding.pry
-    respond_to do |format|
-     format.json {render :json => @task.id}
-    end
 	end
 
 	def update
@@ -16,7 +11,6 @@ class TasksController < ApplicationController
 		@project = current_user.projects.find(params[:project_id])
 		@task = @project.tasks.find(params[:id])
 		@task.update(task_params)
-		render nothing: true
 	end
 
 	def sorting
@@ -30,11 +24,9 @@ class TasksController < ApplicationController
   end
 
 	def destroy
-		#binding.pry
 		@project = current_user.projects.find(params[:project_id])
 		@task = @project.tasks.find(params[:id])
 		@task.destroy
-		render nothing: true
 	end
 
 	private
