@@ -7,14 +7,12 @@ class TasksController < ApplicationController
 	end
 
 	def update
-		#binding.pry
 		@project = current_user.projects.find(params[:project_id])
 		@task = @project.tasks.find(params[:id])
 		@task.update(task_params)
 	end
 
 	def sorting
-		#binding.pry
 		@project = current_user.projects.find(params[:project_id])
     @project.tasks.each do | task |
       task.position = params[:task].index(task.id.to_s)+1

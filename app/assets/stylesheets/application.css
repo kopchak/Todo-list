@@ -201,8 +201,15 @@ h5 {
 	padding: 25px;
 }
 
-.device_password_general {
+.device_password_reset {
 	width: 380px;
+	margin: 140px auto;
+	background: #87CEFA;
+	padding: 25px;
+}
+
+.device_general_signup {
+	width: 522px;
 	margin: 140px auto;
 	background: #87CEFA;
 	padding: 25px;

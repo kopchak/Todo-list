@@ -35,35 +35,33 @@ $(document).ready(function(){
     return false;
   });
 
-  // $('.general').on('change','.checkbox', function() {
-  //   var idProject = $(this).parents(".project").attr("id");
-  //   var idTask = $(this).parents(".task_block").attr("id");
-  //   var status = $(this).parents(".task_block").find(".checkbox").prop("checked");
-  //   var path = "projects/" + idProject + "/tasks/" + idTask;
-  //   $.ajax({
-  //     type: "put",
-  //     url: path,
-  //     data: {"task[status]":status}
-  //   });
-  //   console.log(status);
-  //   // $(this).parents(".task_block").find(".checkbox").attr("checked");
-  //   return false;
-  // });  
+  $('.general').on('change','.checkbox', function() {
+    var idProject = $(this).parents(".project").attr("id");
+    var idTask = $(this).parents(".task_block").attr("id");
+    var status = $(this).parents(".task_block").find(".checkbox").prop("checked");
+    var path = "projects/" + idProject + "/tasks/" + idTask;
+    $.ajax({
+      type: "put",
+      url: path,
+      data: {"task[status]":status}
+    });
+    console.log(status);
+    return false;
+  });  
 
-  // $(".task_list").sortable({
-  //   axis: 'y',
-  //   items: 'li',
-  //   cursor: 'move',
-  //   update: function() {
-  //     var idProject = $(this).parents(".project").attr("id");
-  //     var tasks = $(this).sortable("toArray").toString();
-  //     var path = '/projects/'+ idProject +'/tasks/sorting'
-  //     $.ajax({
-  //     type: "post",
-  //     data: {"task":tasks},
-  //     url: path
-  //     });
-  //   }
-  // });  
-
+  $(".task_list").sortable({
+    axis: 'y',
+    items: 'li',
+    cursor: 'move',
+    update: function() {
+      var idProject = $(this).parents(".project").attr("id");
+      var tasks = $(this).sortable("toArray").toString();
+      var path = '/projects/'+ idProject +'/tasks/sorting'
+      $.ajax({
+      type: "post",
+      data: {"task":tasks},
+      url: path
+      });
+    }
+  });
 });

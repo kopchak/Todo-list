@@ -8,7 +8,6 @@ class ProjectsController < ApplicationController
 	end
 
 	def create
-		#binding.pry
 		@project = current_user.projects.new(project_params)
 		@projects = current_user.projects
 		@task = Task.new
