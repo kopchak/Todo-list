@@ -5,7 +5,11 @@
   <div class="projects">
     <%= render 'projects' %>
   </div>
-  <input type ="button" src="/assets/add_but_img.gif" class ="create_todolist" value = "Add TODO List">
+  <a href="" class="create_todolist">
+    <input type="image" src="/assets/add_but_img.gif" class="create_todolist_img">
+    <span class="create_todolist_span">Add TODO List</span>
+  </a>
+  <!-- <input type ="button" src="/assets/add_but_img.gif" class ="create_todolist" value = "Add TODO List"> -->
   <%= form_for @project, remote: true do |f| %>
   <%= f.text_field :title, class: "add_todolist_text"%>
   <%= f.submit "OK", class: "add_todolist_button" %>

@@ -1,9 +1,7 @@
 body {
 	font-family: Century, Arial, Helvetica, sans-serif;
 	font-size: 14px;
-	width: 800px;
-	margin: auto;
-	padding-top: 35px;
+	margin: 8px;
 }
 
 p {
@@ -12,7 +10,6 @@ p {
 }
 
 ul {
-	float: left;
 	padding: 0;
 	margin: 0;
 }
@@ -21,47 +18,54 @@ li {
 	list-style-type: none;
 }
 
+h5 {
+	margin: 15px 359px;
+}
+
 .general {
-	width: 800px;
-	float: left;
-	position: relative;
+	width: 1000px;
+	margin: 0 auto;
+	padding: 10px 0;
+	background-color: #87CEFA;
 }
 
 .general h1,h2,h5 {
 	text-align: center;
 }
 
-h5 {
-	margin: 15px 359px;
-	position: absolute;
-	bottom: -150px;
+.projects {
+	width: 700px;
+	margin: 0 auto 40px;
 }
 
-.project {
-	width: 800px;
-	margin: 0 auto;
+.project_block img {
 	float: left;
-	padding-top: 40px;
+	margin: 14px;
 }
 
-.project_block img, .project_block input[type="image"] {
+.project_toolbar input[type="image"] {
 	float: left;
-	padding: 7px;
+	margin: 14px 2px 14px 14px;
+}
+
+.project_toolbar img {
+	margin: 14px 6px 14px 10px;
 }
 
 .project_block span {
 	float: left;
 	padding: 7px;
+	margin-top: 9px;
 }
 
 .project_block {
 	font-size: 16px;
-	margin: 0 0 0 0;
-	padding: 7px;
-	width: 786px;
-	float: left;
+	margin: 40px 0 -4px 0;
+	/*padding: 7px;*/
+	width: 700px;
 	color: #DADADA;
-	background-color: #4473AF
+	background-image: url(/assets/back_proj_title.png);
+	display: inline-block;
 }
 
 .project_block:hover .project_toolbar {
@@ -80,44 +84,46 @@ h5 {
 
 .project_input_text, .project_input_button {
 	float: left;
-	margin-top: 7px;
+	margin-top: 14px;
 	display: none;
 }
 
 .add_task_block {
-	width: 800px;
+	width: 700px;
 	background-color: #CFCFCF;
-	float: left;
+	display: inline-block;
 }
 
 .add_task_block img {
 	float: left;
-	margin: 7px 7px 7px 12px;
+	margin: 12px;
 }
 
 .task_input_text {
 	float: left;
-	margin: 8px 8px 8px 7px;
+	margin: 12px 8px 8px 7px;
 	width: 250px;
 	height: 18px;
 }
 
 .task_input_date {
 	float: left;
-	margin: 8px 8px 8px -7px;
+	margin: 12px 8px 8px -7px;
 }
 
 .task_input_button {
 	background-color: #76AD8E;
 	color: white;
-	margin: 8px 8px 8px 0px;
+	margin: 12px 8px 8px 0px;
 	height: 24px;
 }
 
 .task_block {
-	width: 800px;
-	float: left;
+	width: 700px;
+	display: inline-block;
 	border-bottom: 1px solid #E7EBEA;
+	background-color: white;
+	margin-bottom: -3px;
 }
 
 .task_block:hover {
@@ -129,24 +135,22 @@ h5 {
 }
 
 .task_status {
-	padding: 15px;
+	padding: 17px;
 	float: left;
 }
 
 .task_name {
-	width: 615px;
+	width: 515px;
 	border-left: 4px double #EFDADF;
 	padding: 15px;
 	float: left;
-	border-right: 2px solid #E7EBEA;
-}
-
-.task_date_span {
-	margin-left: 10px;
+	border-right: 1px solid #E7EBEA;
 }
 
 .task_name span {
 	float: left;
+	font-size: 16px;
+	margin: 3px 3px;
 }
 
 .task_toolbar {
@@ -157,7 +161,7 @@ h5 {
 
 .task_toolbar img, .task_toolbar input {
 	float: left;
-	margin: 17px 2px;
+	margin: 20px 2px;
 }
 
 .task_edit_text, .task_edit_date, .task_edit_button {
@@ -178,19 +182,26 @@ h5 {
 }
 
 .create_todolist {
-	margin: 0px 344px 0px 344px;
-	height: 30px;
-	background-color: #4473AF;
+	margin: 15px 415px;
+	background-image: url(/assets/back_proj_title.png);
 	font-weight: bold;
-	color: #DADADA;
-	position: absolute;
-	bottom: -65px;
+	color: white;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.create_todolist_img {
+	float: left;
+	margin: 10px;
+}
+
+.create_todolist_span {
+	float: left;
+	margin: 12px 15px 0 0;
 }
 
 .new_project {
-	margin: 0px 235px 30px 300px;
-	position: absolute;
-	bottom: -125px;
+	margin: 0px 393px;
 	display: none;
 }
 
