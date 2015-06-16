@@ -4,6 +4,9 @@ class TasksController < ApplicationController
 	def create
 		@project = current_user.projects.find(params[:project_id])
 		@task = @project.tasks.create(task_params)
+    unless @task.save
+      render :nothing => true
+    end
 	end
 
 	def update

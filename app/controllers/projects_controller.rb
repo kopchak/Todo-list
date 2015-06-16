@@ -11,7 +11,9 @@ class ProjectsController < ApplicationController
 		@project = current_user.projects.new(project_params)
 		@projects = current_user.projects
 		@task = Task.new
-		@project.save
+		unless @project.save
+      render :nothing => true
+    end
 	end
 
 	def update

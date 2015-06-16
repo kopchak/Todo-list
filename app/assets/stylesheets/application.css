@@ -61,9 +61,8 @@ h5 {
 .project_block {
 	font-size: 16px;
 	margin: 40px 0 -4px 0;
-	/*padding: 7px;*/
 	width: 700px;
-	color: #DADADA;
+	color: white;
 	background-image: url(/assets/back_proj_title.png);
 	display: inline-block;
 }
@@ -104,15 +103,17 @@ h5 {
 	margin: 12px 8px 8px 7px;
 	width: 250px;
 	height: 18px;
+	background-image: url(/assets/back_proj_inp.png);
 }
 
 .task_input_date {
 	float: left;
 	margin: 12px 8px 8px -7px;
+	background-image: url(/assets/back_proj_inp.png);
 }
 
 .task_input_button {
-	background-color: #76AD8E;
+	background-image: url(/assets/back_proj_inp_but.png);
 	color: white;
 	margin: 12px 8px 8px 0px;
 	height: 24px;
@@ -161,7 +162,7 @@ h5 {
 
 .task_toolbar img, .task_toolbar input {
 	float: left;
-	margin: 20px 2px;
+	margin: 20px 5px;
 }
 
 .task_edit_text, .task_edit_date, .task_edit_button {

@@ -28,3 +28,6 @@ gem 'acts_as_list'
 gem 'pry-byebug'
 gem 'jquery-sortable-rails'
 gem 'responders', '~> 2.0'
+group :development, :test do
+  gem 'rspec-rails', '~> 3.0'
+end

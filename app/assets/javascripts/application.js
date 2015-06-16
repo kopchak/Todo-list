@@ -50,7 +50,6 @@ $(document).ready(function(){
   });  
 
   $(".task_list").sortable({
-    axis: 'y',
     items: 'li',
     cursor: 'move',
     update: function() {
