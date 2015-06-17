@@ -1,7 +1,6 @@
 $(".projects").html("<%= escape_javascript(render 'projects') %>");
 $('.new_project').hide();
 $(".task_list").sortable({
-    axis: 'y',
     items: 'li',
     cursor: 'move',
     update: function() {
