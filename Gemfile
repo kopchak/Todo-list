@@ -30,4 +30,12 @@ gem 'jquery-sortable-rails'
 gem 'responders', '~> 2.0'
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'shoulda-matchers'
+  gem 'faker'
+  gem 'database_cleaner'
+  gem 'selenium-webdriver'
 end
+gem 'spring', group: :development
