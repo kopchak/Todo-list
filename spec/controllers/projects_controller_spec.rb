@@ -9,7 +9,7 @@ describe ProjectsController do
   end
 
   context '#index' do
-
+    
     it 'create project' do
       get :index, id: @project.id
       expect response.status == 200
@@ -25,7 +25,7 @@ describe ProjectsController do
   context '#create' do
 
     it 'post project' do
-      post :create, title: @project.title
+      post :create, @project.title
       expect response.status == 200
     end
 
@@ -63,5 +63,4 @@ describe ProjectsController do
     end
 
   end
-
 end

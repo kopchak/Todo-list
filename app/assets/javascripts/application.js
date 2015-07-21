@@ -45,7 +45,6 @@ $(document).ready(function(){
       url: path,
       data: {"task[status]":status}
     });
-    console.log(status);
     return false;
   });  
 

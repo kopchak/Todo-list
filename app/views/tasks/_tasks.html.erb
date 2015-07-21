@@ -13,8 +13,8 @@
     </div>
     <div class="task_toolbar">
       <input type="image" class="edit_task_img_hover" src="/assets/edit_task.png">
-      <image src="/assets/2.png">
-      <%= link_to image_tag("del_task.png"), project_task_path(project, task), remote: true, class: 'delete_task_img_hover', method: :delete %>
+      <image src="/assets/delimiter toolbar_task_img.png">
+      <%= link_to image_tag("delete_task.png"), project_task_path(project, task), remote: true, class: 'delete_task_img_hover', method: :delete %>
     </div>
   </li>
 <% end %>
