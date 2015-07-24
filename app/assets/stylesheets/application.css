@@ -1,143 +1,253 @@
 body {
-	font-family: Century, Arial, Helvetica, sans-serif;
-	font-size: 14px;
-	width: 800px;
-	margin: auto;
-	padding-top: 35px;
+  font-family: Century, Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  margin: 8px;
 }
 
 p {
-	font-size: 14px;
-	color: #434342;
+  font-size: 14px;
+  color: #434342;
 }
 
 ul {
-	float: left;
-	padding: 0;
-	margin: 0;
+  padding: 0;
+  margin: 0;
 }
 
 li {
-	list-style-type: none;
+  list-style-type: none;
 }
 
-.project {
-	width: 800px;
-	margin: 0 auto;
-	float: left;
-	padding-top: 40px;
+h5 {
+  margin: 15px 359px;
 }
 
-.header {
-	width: 800px;
-	float: left;
+.general {
+  width: 1000px;
+  margin: 0 auto;
+  padding: 10px 0;
+  background-color: #87CEFA;
 }
 
-.header h1,h2 {
-	text-align: center;
+.general h1,h2,h5 {
+  text-align: center;
 }
 
-.header_top img {
-	float: left;
-	padding: 7px;
+.projects {
+  width: 700px;
+  margin: 0 auto 40px;
 }
 
-.header_top span {
-	float: left;
-	padding: 7px;
+.project_block img {
+  float: left;
+  margin: 14px;
 }
 
-.header_top {
-	font-size: 16px;
-	margin: 0 0 0 0;
-	padding: 7px;
-	width: 786px;
-	float: left;
-	color: #DADADA;
-	background-color: #4473AF
+.project_toolbar input[type="image"] {
+  float: left;
+  margin: 14px 2px 14px 14px;
 }
 
-.header_top:hover .del_edit {
-	display: block;
+.project_toolbar img {
+  margin: 14px 6px 14px 10px;
 }
 
-.del_edit {
-	float: right;
-	padding: 5px 5px 0 0;
-	display: none;
+.project_block span {
+  float: left;
+  padding: 7px;
+  margin-top: 9px;
 }
 
-.header_bot {
-	width: 800px;
-	background-color: #CFCFCF;
-	float: left;
+.project_block {
+  font-size: 16px;
+  margin: 40px 0 -4px 0;
+  width: 700px;
+  color: white;
+  background-image: url(/assets/back_proj_title.png);
+  display: inline-block;
 }
 
-.header_bot img {
-	float: left;
-	padding: 7px;
+.project_block:hover .project_toolbar {
+  display: block;
 }
 
-.header_bot input {
-	margin-top: 7px;
+.project_toolbar {
+  float: right;
+  padding: 5px 5px 0 0;
+  display: none;
 }
 
-.header_bot button {
-	margin-left: -7px;
-	width: 125px;
-	background-color: #6CA384;
-	color: #FFF;
-	border-radius: 0 5px 5px 0;
-	clear: both;
+.project_input_text {
+  margin-left: 5px
 }
 
-.task_line {
-	width: 800px;
-	float: left;
-	border-bottom: 1px solid #E7EBEA;
+.project_input_text, .project_input_button {
+  float: left;
+  margin-top: 14px;
+  display: none;
 }
 
-.task_line:hover {
-	background-color: #FCFED5;
+.add_task_block {
+  width: 700px;
+  background-color: #CFCFCF;
+  display: inline-block;
 }
 
-.task_line:hover .edit_task {
-	display: block;
+.add_task_block img {
+  float: left;
+  margin: 12px;
 }
 
-.select_task {
-	padding: 15px;
-	float: left;
+.task_input_text {
+  float: left;
+  margin: 12px 8px 8px 7px;
+  width: 250px;
+  height: 18px;
+  background-image: url(/assets/back_proj_inp.png);
 }
 
-.name_task {
-	width: 615px;
-	border-left: 4px double #EFDADF;
-	padding: 15px;
-	float: left;
-	border-right: 2px solid #E7EBEA;
+.task_input_date {
+  float: left;
+  margin: 12px 8px 8px -7px;
+  background-image: url(/assets/back_proj_inp.png);
 }
 
-.name_task p {
-	margin: 0 0 0 0;
+.task_input_button {
+  background-image: url(/assets/back_proj_inp_but.png);
+  color: white;
+  margin: 12px 8px 8px 0px;
+  height: 24px;
 }
 
-.edit_task {
-	padding: 15px 25px 15px 15px;
-	float: right;
-	display: none;
+.task_block {
+  width: 700px;
+  display: inline-block;
+  border-bottom: 1px solid #E7EBEA;
+  background-color: white;
+  margin-bottom: -3px;
 }
 
-.add_tl {
-	margin: 30px 330px;
-	float: left;
+.task_block:hover {
+  background-color: #FCFED5;
 }
 
-.add_tl button {
-	background-color: #4473AF;
+.task_block:hover .task_toolbar {
+  display: block;
 }
 
-.add_tl span {
-	font-weight: bold;
-	color: #DADADA;
+.task_status {
+  padding: 17px;
+  float: left;
+}
+
+.task_name {
+  width: 515px;
+  border-left: 4px double #EFDADF;
+  padding: 15px;
+  float: left;
+  border-right: 1px solid #E7EBEA;
+}
+
+.task_name span {
+  float: left;
+  font-size: 16px;
+  margin: 3px 3px;
+}
+
+.task_toolbar {
+  float: right;
+  margin-right: 19px;
+  display: none;
+}
+
+.task_toolbar img, .task_toolbar input {
+  float: left;
+  margin: 20px 5px;
+}
+
+.task_edit_text, .task_edit_date, .task_edit_button {
+  float: left;
+  display: none;
+}
+
+.task_edit_text {
+  height: 18px;
+}
+
+.task_edit_date {
+  margin: 0px 8px 0px 1px;
+}
+
+.task_edit_button {
+  height: 24px;
+}
+
+.create_todolist {
+  margin: 15px 415px;
+  background-image: url(/assets/back_proj_title.png);
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.create_todolist_img {
+  float: left;
+  margin: 10px;
+}
+
+.create_todolist_span {
+  float: left;
+  margin: 12px 15px 0 0;
+}
+
+.new_project {
+  margin: 0px 393px;
+  display: none;
+}
+
+.device_general {
+  width: 380px;
+  margin: 140px auto;
+  background: #87CEFA;
+  padding: 25px;
+}
+
+.device_password_reset {
+  width: 380px;
+  margin: 140px auto;
+  background: #87CEFA;
+  padding: 25px;
+}
+
+.device_general_signup {
+  width: 522px;
+  margin: 140px auto;
+  background: #87CEFA;
+  padding: 25px;
+}
+
+.field_email, .field_password, .field_remember, .field_email_passwrd {
+  font-size: 25px;
+  padding-bottom: 10px;
+}
+
+.field_email input, .field_password input, .field_email_passwrd input {
+  font-size: 20px;
+}
+
+.field_email label {
+  margin-left: 47px;
+}
+
+.field_email label, .field_password label {
+  margin-right: 5px;
+}
+
+.actions {
+  margin: 0px 0px 15px 0px;
+}
+
+.actions input {
+  font-size: 23px;
 }

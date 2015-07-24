@@ -1,0 +1,20 @@
+<% project.tasks.each do |task| %>
+  <li class="task_block" id="<%= task.id %>">
+    <div class="task_status">
+      <%= check_box_tag "", "", task.status, class: "checkbox" %>
+    </div>
+    <div class="task_name">
+      <span class="task_name_span"><%= task.title %></span><span class="task_date_span">deadline: <%= task.date %></span>
+      <%= form_for [project, task], remote: true do |f| %>
+      <%= f.text_field :title, class: "task_edit_text", size: "30" %>
+      <%= f.date_field :date, class: "task_edit_date" %>
+      <%= f.submit "OK",  class: "task_edit_button" %>
+      <% end %> 
+    </div>
+    <div class="task_toolbar">
+      <input type="image" class="edit_task_img_hover" src="/assets/edit_task.png">
+      <image src="/assets/delimiter toolbar_task_img.png">
+      <%= link_to image_tag("delete_task.png"), project_task_path(project, task), remote: true, class: 'delete_task_img_hover', method: :delete %>
+    </div>
+  </li>
+<% end %>

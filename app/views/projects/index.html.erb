@@ -1,57 +1,17 @@
-<body>
-  <div class="header">
-      <h1>SIMPLE TODO LISTS</h1>
-      <h2>FROM RUBY GARAGE</h2>
-      <% @projects.each do |project| %>
-        <div class="project">
-          <div class="header_top">
-            <%= image_tag "notepad.gif" %>
-              <span><%= project.title %></span>
-              <div class="del_edit">
-                <%= image_tag "edit_proj.gif" %>
-                <%= image_tag "1.png" %>
-                <%= link_to (image_tag("del_proj.gif")), project_path(project), method: :delete %> 
-              </div><!--end del_edit-->
-          </div><!--end header top-->
-          <div class="header_bot">
-            <%= image_tag "inp_img.gif" %>
-            <input type="text" size="50" placeholder="Start typing here to create a task...">
-            <button>Add Task</button>
-          </div><!--end header bot-->
-          <ul class="task_block">
-            <% project.tasks.each do |task| %>
-              <li class="task_line">
-                <div class="select_task">
-                  <input type="checkbox">
-                </div><!--end select_task-->
-                <div class="name_task">
-                  <p><%= task.task %></p>
-                </div><!--end name_task-->
-                <div class="edit_task">
-                  <%= image_tag "leaf.png" %>
-                  <%= image_tag "2.png" %>
-                  <%= image_tag "edit_task.png" %>
-                  <%= image_tag "2.png" %>
-                  <%= image_tag "del_task.png" %>
-                </div><!--end edit_task-->
-              </li><!--end task_line-->
-            <% end %>
-          </ul><!--end task block-->
-        </div><!--end project-->
-      <% end %>
-      <div class="add_tl">
-        <button>
-          <%= image_tag "add_but_img.gif" %><span>Add TODO List</span>
-          <%= form_for @project do |f| %>
-            <p>
-              <%= f.label :title %><br>
-              <%= f.text_field :title %>
-            </p>
-            <p>
-              <%= f.submit %>
-            </p>
-          <% end %>
-        </button>
-      </div>
-  </div><!--end header-->
-</body><!--end body-->
+<div class="general">
+  <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+  <h1>SIMPLE TODO LISTS</h1>
+  <h2>FROM RUBY GARAGE</h2>
+  <div class="projects">
+    <%= render 'projects' %>
+  </div>
+  <a href="" class="create_todolist">
+    <input type="image" src="/assets/add_but_img.gif" class="create_todolist_img">
+    <span class="create_todolist_span">Add TODO List</span>
+  </a>
+  <%= form_for @project, remote: true do |f| %>
+  <%= f.text_field :title, class: "add_todolist_text"%>
+  <%= f.submit "OK", class: "add_todolist_button" %>
+  <% end %>
+  <h5>&copy;Ruby Garage</h5>
+</div>

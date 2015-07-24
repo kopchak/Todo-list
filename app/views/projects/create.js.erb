@@ -1,0 +1,16 @@
+$(".projects").html("<%= escape_javascript(render 'projects') %>");
+$('.new_project').hide();
+$(".task_list").sortable({
+    items: 'li',
+    cursor: 'move',
+    update: function() {
+      var idProject = $(this).parents(".project").attr("id");
+      var tasks = $(this).sortable("toArray").toString();
+      var path = '/projects/'+ idProject +'/tasks/sorting'
+      $.ajax({
+      type: "post",
+      data: {"task":tasks},
+      url: path
+      });
+    }
+  });
